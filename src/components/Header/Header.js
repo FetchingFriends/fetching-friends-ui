@@ -7,8 +7,11 @@ const Header = () => {
 
   return (
     <header>
-      <h2 className='title'>fetching-friends</h2>
-      <img className='logo' src={pets} alt='logo'></img>
+      <div className='title-logo'>
+        <h2 className='title'>fetching-friends</h2>
+        <img className='logo' src={pets} alt='logo'></img>
+      </div>
+      <button className='sign-up-button'>Sign Up</button>
     </header>
   )
 }
