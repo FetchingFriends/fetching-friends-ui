@@ -1,0 +1,17 @@
+.logo {
+  height: 75%;
+  width: auto;
+  margin-top: 8px
+}
+
+.title {
+  color: white;
+  margin-left: 10px;
+  margin-right: 10px
+}
+
+header {
+  height: 80px;
+  display: flex;
+  background-color: #6504B5
+}
