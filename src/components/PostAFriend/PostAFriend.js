@@ -1,38 +1,21 @@
 import React, { useState } from 'react';
 import './PostAFriend.css'
+import renderQuestion from './renderQuestion.js'
 
 function PostAFriend() {
   const [reRenderH1, setReRenderH1] = useState('name');
-  const questions = [{ question: 'What\'s your Friend\'s name?', id: 'name' }, { question: 'How old are they?', id: 'age' }, 'What breed?', 'If you could describe them in a short paragraph?', 'Gender?', 'Neutered?', 'House trained?', 'Upload a few photos so we can find your friend a new home!', 'Good with kids or other friends?']
+  const questions = [{ question: 'What\'s your Friend\'s name?', id: 'name' }, { question: 'How old are they?', id: 'age' }, {question:'What breed?', id:'breed'}, {question: 'If you could describe them in a short paragraph?', id:'description'}, {question:'Gender?', id:'gender'}, {question: 'Neutered?', id:'fixed'}, {question: 'House trained?', id:'houseTrained'}, {question:'Upload a few photos so we can find your friend a new home!', id:'photos'}, {question: 'Good with kids or other friends?', id:'goodWith'}]
 
   function nextQuestion() {
-    setReRenderH1('age')
-    renderH1()
-  }
-
-  function renderH1() {
-    if (reRenderH1 === 'name') {
-      return (
-        <>
-          <h1 className='fade-in'>{questions[0].question}</h1>
-          <input type='text' className='text-input'></input>
-        </>
-      )
-    } else if (reRenderH1 === 'age') {
-      return (
-        <>
-          <h1 className='fade'>{questions[1].question}</h1>
-          <input type='number' className='numInput'></input>
-        </>
-      )
-    }
+    setReRenderH1(questions[0+1].id)
+    renderQuestion(reRenderH1, questions)
   }
 
   return (
     <main>
       <h1>Find your Friend a new Home</h1>
       <div className='question'>
-        {renderH1()}
+        {renderQuestion(reRenderH1, questions)}
       </div>
       <button className='submit-question' type='submit' onClick={() => nextQuestion()}>➤</button>
     </main>
