@@ -3,7 +3,13 @@ import './PostAFriend.css'
 
 function PostAFriend() {
 
-
+  function handleTrueFalseLabel(option) {
+    if(option === true) {
+      return 'Yes'
+    } else {
+      return 'No'
+    }
+  }
   function renderQuestion() {
     return (
       <>
@@ -25,8 +31,8 @@ function PostAFriend() {
       const returnOptions = questions[renderQuestionById].options.map(option => {
         return (
           <div className={inputType}>
-          <label key={`${option} label`}>{option}</label>
-          <input className={inputType} name={questions[renderQuestionById].id} type={inputType} value={option} key={option} />
+          <label key={`${option} label`}>{handleTrueFalseLabel(option)}</label>
+          <input className={inputType} name={questions[renderQuestionById].id} type={inputType} value={option} key={option} onClick={(e) => {setInputValue(e.target.value)}}/>
           </div>
         )
       })
@@ -34,9 +40,10 @@ function PostAFriend() {
     }  else if(inputType === 'checkbox') {
       const returnOptions = questions[renderQuestionById].options.map(option => {
         return (
-          <div className={inputType}>
+          
+          <div className={inputType}> 
           <label key={`${option} label`}>{option}</label>
-          <input className={inputType} name={questions[renderQuestionById].id} type={inputType} value={option} key={option} />
+          <input className={inputType} name={questions[renderQuestionById].id} type={inputType} value={option} key={option} onClick={(e) => {setInputValue(e.target.value)}}/>
           </div>
         )
       })
@@ -45,10 +52,13 @@ function PostAFriend() {
   }
 
   const [renderQuestionById, setrenderQuestionById] = useState(0);
-  const questions = [{ question: 'What\'s your Friend\'s name?', id: 'name', inputType:'text'}, { question: 'How old are they?', id: 'age', inputType:'number'}, {question:'What breed?', id:'breed', inputType:'text'}, {question: 'If you could describe them in a short paragraph?', id:'description', inputType:'text'}, {question:'Gender?', id:'gender', inputType:'radio', options:['M', 'F']}, {question: 'Neutered?', id:'fixed', inputType:'radio', options:['Yes', 'No']}, {question: 'House trained?', id:'houseTrained', inputType:'radio', options:['Yes', 'No']}, {question:'Upload a few photos so we can find your friend a new home!', id:'photos', inputType:'text'}, {question: 'Good with kids or other friends?', id:'goodWith', inputType:'checkbox', options:['Kids', 'Pets']}]
+  const questions = [{ question: 'What\'s your Friend\'s name?', id: 'name', inputType:'text'}, { question: 'How old are they?', id: 'age', inputType:'number'}, {question:'What breed?', id:'breed', inputType:'text'}, {question: 'If you could describe them in a short paragraph?', id:'description', inputType:'text'}, {question:'Gender?', id:'gender', inputType:'radio', options:['M', 'F']}, {question: 'Neutered?', id:'fixed', inputType:'radio', options:[true, false]}, {question: 'House trained?', id:'houseTrained', inputType:'radio', options:[true, false]}, {question:'Upload a few photos so we can find your friend a new home!', id:'photos', inputType:'text'}, {question: 'Good with kids or other friends?', id:'goodWith', inputType:'checkbox', options:['Kids', 'Pets']}]
   const [newPet, setnewPet] = useState({})
-  function nextQuestion() {
-    setnewPet(...newPet, newPet[questions[renderQuestionById].id] = inputValue)
+
+  function nextQuestion(inputQuestion) {
+    const updatePet = {...newPet}
+    updatePet[inputQuestion] = inputValue
+    setnewPet(updatePet)
     setrenderQuestionById(renderQuestionById + 1)
     setInputValue('');
   }
@@ -59,7 +69,7 @@ function PostAFriend() {
       <div className='question'>
         {renderQuestion()}
       </div>
-      <button className='submit-question' type='submit' onClick={() => nextQuestion()}>➤</button>
+      <button className='submit-question' type='submit' onClick={() => nextQuestion(questions[renderQuestionById].id)}>➤</button>
     </main>
   );
 }
