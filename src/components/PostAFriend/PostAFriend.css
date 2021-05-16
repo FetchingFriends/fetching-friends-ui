@@ -19,6 +19,10 @@ main {
     align-items: center;
   }
 
+  .input {
+    display: flex;
+  }
+
   .submit-question {
     background-color: rgb(30, 154, 255);
     height: 30px;
@@ -29,6 +33,16 @@ main {
     color: white;
     font-size: 20px;
   }
+
+  .number {
+    width: 35px;
+    height: 20px;
+    border-radius: 10%;
+  }
+  .radio, .checkbox {
+    margin: 10px;
+  }
+ 
 
   .text-input {
     width: 50%;
