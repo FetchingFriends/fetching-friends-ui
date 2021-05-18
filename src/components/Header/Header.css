@@ -6,6 +6,8 @@
 
 .title-logo {
   display: flex;
+  text-decoration: none;
+  font-family: 'Patrick Hand';
 }
 
 .sign-up-button {

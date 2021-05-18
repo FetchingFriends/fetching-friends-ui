@@ -2,13 +2,13 @@
   margin-top: 50px
 }
 
-.username-input {
+.input {
   margin-right: 10px;
   height: 25px;
   border-radius: 5px
 }
 
-.login-button {
+.button {
   color: white;
   background-color: #6504B5;
   height: 30px;
@@ -16,7 +16,7 @@
   border-radius: 5px
 }
 
-.login-button:hover {
+.button:hover {
   background-color: white;
   border-color: #6504B5;
   color: #6504B5;

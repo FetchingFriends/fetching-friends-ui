@@ -25,7 +25,6 @@ export const user =  {
             "created_at": "time stamp",
             "updated_at": "time stamp"
           },
-          ... additional pet objects
         ],
         "favorites": [
           {
@@ -47,7 +46,6 @@ export const user =  {
             "created_at": "time stamp",
             "updated_at": "time stamp"
           },
-          ... additional pet objects
         ],
         "application": [
           {
@@ -59,7 +57,6 @@ export const user =  {
             "created_at": "time stamp",
             "updated_at": "time stamp"
           },
-          ... additional application objects
         ],
         "pet_applications": [
           {
@@ -71,7 +68,6 @@ export const user =  {
             "created_at": "time stamp",
             "updated_at": "time stamp"
           },
-          ... additional application objects
         ],
       }
     }
