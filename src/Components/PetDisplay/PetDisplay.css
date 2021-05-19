@@ -1,0 +1,14 @@
+.pet-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 5vw;
+  row-gap: 1vh;
+  padding: 2%;
+}
+
+@media screen and (max-width: 750px) {
+  .pet-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

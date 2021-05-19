@@ -1,0 +1,21 @@
+.pet-image{
+  width: auto;
+  height: 50vh;
+}
+
+.info-container{
+  margin: auto;
+  width: 55%;
+  display: flex;
+  justify-content: center;
+}
+
+.bio{
+  font-weight: bolder;
+}
+
+.pet-info{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
