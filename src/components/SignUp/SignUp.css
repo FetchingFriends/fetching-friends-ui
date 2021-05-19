@@ -1,0 +1,21 @@
+.sign-up-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.username-signup, .email-signup, .signup {
+  width: 100px;
+  margin-top: 10px
+}
+
+.signup {
+  margin-right: 10px
+}
+
+h2 {
+  font-family: 'Patrick Hand';
+  color: #6504B5
+}

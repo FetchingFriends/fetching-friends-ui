@@ -1,0 +1,15 @@
+.user-pets, .find-post-pet {
+  display: flex;
+  justify-content: space-around;
+}
+
+.my-pets {
+  width: 50%;
+  border-right: solid #6504B5 4px;
+  border-bottom: solid #6504B5 4px
+}
+
+.favorite-pets {
+  width: 50%;
+  border-bottom: solid #6504B5 4px
+}
