@@ -13,9 +13,24 @@ main {
   }
 
   .question {
-    margin-top: 300px;
+    margin-top: 200px;
     display: flex;
     flex-direction: column;
+  }
+
+  .submit-question {
+    background-color: rgb(30, 154, 255);
+    height: 30px;
+    width: 35px;
+    border-radius: 50%;
+    margin-top: 20px;
+    border: none;
+    color: white;
+    font-size: 20px;
+  }
+
+  .text-input {
+    width: 50%;
   }
 
   .fade-in {

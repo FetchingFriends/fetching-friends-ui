@@ -3,12 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
+<<<<<<< HEAD
 import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <BrowserRouter>
     <App />
   </BrowserRouter>,
+=======
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+>>>>>>> 11ba80c... Add button design and add multiple questions
   document.getElementById('root')
 );
 
