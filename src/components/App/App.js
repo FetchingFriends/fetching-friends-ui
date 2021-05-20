@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import './App.css';
 import Header from '../Header/Header'
-<<<<<<< HEAD
 import Login from '../Login/Login'
-=======
 import PostAFriend from '../PostAFriend/PostAFriend';
 import { Route, Switch } from 'react-router-dom'
 import SignUp from '../SignUp/SignUp'
