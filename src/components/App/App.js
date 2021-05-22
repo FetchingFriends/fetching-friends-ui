@@ -10,13 +10,13 @@ import petData from "../../dummyPetData.js"
 import PetDisplay from "../PetDisplay/PetDisplay.js"
 import PetCard from "../PetCard/PetCard.js"
 import PetInfo from "../PetInfo/PetInfo.js"
+import { connect } from 'react-redux';
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      petsToDisplay: petData,
-      login: ''
+      petsToDisplay: petData
     }
   }
 
@@ -40,7 +40,7 @@ class App extends Component {
               </>
             )
           }} />
-          <Route exact path='/user-home' render={() => {
+          <Route exact path='/homepage' render={() => {
             return (
               <>
                 <UserHome />

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './SignUp.css'
 import { Link } from 'react-router-dom'
-
+import { userSignUp } from '../../../src/apiCalls'
 
 class SignUp extends Component {
   constructor() {
@@ -14,6 +14,11 @@ class SignUp extends Component {
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value })
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+    userSignUp(this.state)
   }
 
   render () {
@@ -39,7 +44,7 @@ class SignUp extends Component {
             onChange={this.handleChange}
           />
 
-          <button className='signup button'>Submit</button>
+          <button className='signup button' onClick={this.handleSubmit}>Submit</button>
         </form>
       </>
     )
