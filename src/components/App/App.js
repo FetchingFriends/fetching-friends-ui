@@ -27,7 +27,7 @@ class App extends Component {
             return (
               <>
                 <Login />
-                <img className='background-image' src='https://www.whitewatervethospital.com/storage/app/media/puppies-and-kittens.jpg'/>
+                <img className='background-image' src='https://www.whitewatervethospital.com/storage/app/media/puppies-and-kittens.jpg' alt='puppies and kittens'/>
               </>
             )
           }} />
@@ -45,8 +45,14 @@ class App extends Component {
               </>
             )
           }} />
-          <Route exact path='/all-pets' render={() =>
-            <PetDisplay petsToDisplay={this.state.petsToDisplay}/>
+          <Route exact path='/all-pets/dogs' render={() =>
+            <PetDisplay type={ "dogs" } petsToDisplay={this.state.petsToDisplay}/>
+          }/>
+          <Route exact path='/all-pets/cats' render={() =>
+            <PetDisplay type={ "cats" } petsToDisplay={this.state.petsToDisplay}/>
+          }/>
+          <Route exact path='/all-pets/other' render={() =>
+            <PetDisplay type={ "other" } petsToDisplay={this.state.petsToDisplay}/>
           }/>
           <Route exact path='/pet/:id' render={({match}) =>
           <PetInfo id={ match.params.id } pets={ this.state.petsToDisplay }/>
