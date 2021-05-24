@@ -4,6 +4,7 @@ import "./PetInfo.css"
 
 const PetInfo = ( {id, pets} ) => {
   let petMatch = pets.filter(pet => pet.id === id)
+  console.log(petMatch)
   return (
     <div className="info-container">
       <div className="pet-info">
@@ -14,7 +15,7 @@ const PetInfo = ( {id, pets} ) => {
         <p>Age: {petMatch[0].attributes.age}</p>
         <p>Breed: {petMatch[0].attributes.breed}</p>        
         <p>Gender: {petMatch[0].attributes.gender}</p>
-        <Link to={'/'}>
+        <Link to={`/all-pets/${petMatch[0].type}s`}>
           <button>Back</button>
         </Link>
       </div>
