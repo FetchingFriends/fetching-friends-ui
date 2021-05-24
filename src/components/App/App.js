@@ -15,7 +15,8 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      petsToDisplay: petData
+      petsToDisplay: petData,
+      login: ''
     }
   }
 
@@ -27,7 +28,7 @@ class App extends Component {
           <Route exact path='/' render={() => {
             return (
               <>
-                <Login />
+                <Login setLoginValue={this.setLoginValue}/>
                 <img className='background-image' src='https://www.whitewatervethospital.com/storage/app/media/puppies-and-kittens.jpg'/>
               </>
             )
@@ -58,5 +59,4 @@ class App extends Component {
   }
 }
 
-
-export default App;
+export default App

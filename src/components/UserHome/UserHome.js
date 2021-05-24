@@ -1,6 +1,6 @@
 import React from 'react'
 import './UserHome.css'
-
+import { connect } from 'react-redux';
 
 const UserHome = () => {
   return (
@@ -32,4 +32,8 @@ const UserHome = () => {
   )
 }
 
-export default UserHome
+export const mapStateToProps = ({ selectedUser }) => ({
+  selectedUser
+})
+
+export default connect(mapStateToProps)(UserHome)
