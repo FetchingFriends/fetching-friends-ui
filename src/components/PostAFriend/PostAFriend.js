@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
+import { postANewPet } from '../../postAPetAPI.js'
 import './PostAFriend.css'
 
 function PostAFriend() {
@@ -92,6 +93,7 @@ function PostAFriend() {
         {renderQuestionById === 10 && <button className='completed-question' type='submit' onClick={(e) => {
           e.preventDefault()
           console.log('submitted')
+          postANewPet(newPet)
         }}>Complete</button>}
       </form>
       <Link to={'/homepage'}>
