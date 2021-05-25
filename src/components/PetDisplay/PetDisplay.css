@@ -6,6 +6,14 @@
   padding: 2%;
 }
 
+.button {
+  color: white;
+  background-color: #6504B5;
+  height: 30px;
+  font-weight: bold;
+  border-radius: 5px
+}
+
 @media screen and (max-width: 750px) {
   .pet-display {
     display: grid;
