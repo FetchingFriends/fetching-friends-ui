@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import './FilterForm.css'
 
 class FilterForm extends Component {
   constructor({ filterPets }) {
@@ -6,7 +7,10 @@ class FilterForm extends Component {
     this.state = {
       gender: '',
       fixed: '',
-      age: ''
+      age: '',
+      trained: '',
+      kids: '',
+      animals: ''
     }
   }
 
@@ -18,19 +22,19 @@ class FilterForm extends Component {
     return(
       <form>
         <label for="gender">Gender</label>
-        <select onChange={this.handleChange} id="gender" name="gender">
+        <select onChange={this.handleChange} id="gender" name="gender" className="ddl">
           <option value=''>All</option>
           <option value="Male">M</option>
           <option value="Female">F</option>
         </select>
         <label for="fixed">Fixed</label>
-        <select onChange={this.handleChange} id="fixed" name="fixed">
+        <select onChange={this.handleChange} id="fixed" name="fixed" className="ddl">
           <option value=''>All</option>
           <option value="true">yes</option>
           <option value="false">no</option>
         </select>
         <label for="age">Age</label>
-        <select onChange={this.handleChange} id="age" name="age">
+        <select onChange={this.handleChange} id="age" name="age" className="ddl">
           <option value=''>All</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -41,7 +45,25 @@ class FilterForm extends Component {
           <option value="7">7</option>
           <option value="8">8</option>
         </select>
-        <button onClick={(e) => this.props.filterPets(this.state, e)}>Filter</button>
+        <label for="trained">House Trained</label>
+        <select onChange={this.handleChange} id="trained" name="trained" className="ddl">
+          <option value=''>All</option>
+          <option value="true">yes</option>
+          <option value="false">no</option>
+        </select>
+        <label for="kids">Good with Kids</label>
+        <select onChange={this.handleChange} id="kids" name="kids" className="ddl">
+          <option value=''>All</option>
+          <option value="true">yes</option>
+          <option value="false">no</option>
+        </select>
+        <label for="animals">Good with Animals</label>
+        <select onChange={this.handleChange} id="animals" name="animals" className="ddl">
+          <option value=''>All</option>
+          <option value="true">yes</option>
+          <option value="false">no</option>
+        </select>
+        <button className="button" onClick={(e) => this.props.filterPets(this.state, e)}>Filter</button>
       </form>
     )
   }
