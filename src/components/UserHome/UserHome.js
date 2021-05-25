@@ -20,6 +20,7 @@ const UserHome = (props) => {
         <div className='user-pets'>
           <section className='my-pets'>
             <h2>My Friends</h2>
+              {!selectedUser.data.attributes.pets.length && <h4>You have not submitted any friends!</h4>}
               {selectedUser.data && <div className="pet-display">{selectedUser.data.attributes.pets.map(pet => {
                 return(
                   <PetCard pet={pet} />
@@ -28,11 +29,12 @@ const UserHome = (props) => {
           </section>
           <section className='favorite-pets'>
             <h2>Favorited Friends</h2>
-              {selectedUser.data && <div className="pet-display">{selectedUser.data.attributes.favorites.map(pet => {
-                return(
-                  <PetCard pet={pet} />
-                )
-              })}</div>}
+               {/* {!selectedUser.data.attributes.favorites.length && <h4>You have not favorited any friends yet!</h4>}
+                {selectedUser.data && <div className="pet-display">{selectedUser.data.attributes.favorites.map(pet => {
+                 return(
+                   <PetCard pet={pet} />
+                 )
+              })}</div>} */}
           </section>
         </div>
         <section className='find-post-pet'>
@@ -40,10 +42,22 @@ const UserHome = (props) => {
             <h2>Find New Friend</h2>
             <h3>What are you looking for?</h3>
             <div className='search-buttons'>
-              <button className='dog button'>Dog</button>
+            <Link to={`/all-pets/dogs`} style={{textDecoration:'none'}}>
+              <button className='dog button'>Dog</button> 
+            </Link>
+            <Link to={`/all-pets/cats`} style={{textDecoration:'none'}}>
               <button className='cat button'>Cat</button>
+            </Link>
+            <Link to={`/all-pets/other`} style={{textDecoration:'none'}}>
               <button className='other button'>Other</button>
+            </Link>
             </div>
+          </div>
+          <div>
+            <h2>Pending Applications</h2>
+            <Link to='/applications'>
+              <button className='button'>Applications</button>
+            </Link>
           </div>
           <div>
             <h2>Post Friend for Adoption</h2>

@@ -11,13 +11,26 @@ import PetDisplay from "../PetDisplay/PetDisplay.js"
 import PetCard from "../PetCard/PetCard.js"
 import PetInfo from "../PetInfo/PetInfo.js"
 import { connect } from 'react-redux';
+import { getAnimals } from '../../apiCalls'
+import Applications from '../Applications/Applications'
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      petsToDisplay: petData
+      dogs: [],
+      cats: [],
+      other: []
     }
+  }
+
+  componentDidMount() {
+    getAnimals('dogs')
+    .then(data => this.setState({dogs: data.data}))
+    getAnimals('cats')
+    .then(data => this.setState({cats: data.data}))
+    getAnimals('other')
+    .then(data => this.setState({other: data.data}))
   }
 
   render() {
@@ -47,16 +60,34 @@ class App extends Component {
               </>
             )
           }} />
-          <Route exact path='/all-pets' render={() =>
-            <PetDisplay petsToDisplay={this.state.petsToDisplay}/>
+          <Route exact path='/all-pets/dogs' render={() =>
+            <PetDisplay type={ "dogs" } petsToDisplay={this.state.petsToDisplay}/>
           }/>
-          <Route exact path='/pet/:id' render={({match}) =>
-          <PetInfo id={ match.params.id } pets={ this.state.petsToDisplay }/>
+          <Route exact path='/all-pets/cats' render={() =>
+            <PetDisplay type={ "cats" } petsToDisplay={this.state.petsToDisplay}/>
+          }/>
+          <Route exact path='/applications' render={() => {
+            return (
+              <>
+                <Applications />
+              </>
+            )
+          }} />
+          <Route exact path='/all-pets/other' render={() =>
+            <PetDisplay type={ "other" } petsToDisplay={this.state.petsToDisplay}/>
+          }/>
+          <Route exact path='/pet/:type/:id' render={({match}) =>
+            <PetInfo id={ match.params.id } type ={match.params.type} pets={ this.state }/>
         }/>
         </Switch>
       </div>
     )
   }
 }
+
+export const mapStateToProps = ({petsToDisplay}) => ({
+  petsToDisplay
+}
+)
 
 export default App

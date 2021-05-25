@@ -1,17 +1,13 @@
 import { Link } from 'react-router-dom'
 import './PetCard.css'
 
-const petCard = ( {pet} ) => {
+const petCard = ( { pet } ) => {
   return(
-    <Link to={`/pet/${pet.id}`} style={{textDecoration:'none'}}>
+    <Link to={`/pet/${pet.attributes.pet_type}/${pet.id}`} style={{textDecoration:'none'}}>
       <div className="card">
-        <p>{pet.name}</p>
-        <p>Age: {pet.age}</p>
-        <p>Breed: {pet.breed}</p>
-        <p>{pet.gender}</p>
+      <img src={pet.attributes.photo_url_1} alt="Pet" className="card-image"/>
       </div>
     </Link>
-
   )
 }
 

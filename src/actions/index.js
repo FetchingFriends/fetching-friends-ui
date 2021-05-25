@@ -12,3 +12,8 @@ export const hasErrored = errorMsg => ({
   type: 'HAS_ERRORED',
   errorMsg
 });
+
+export const getPetsToDisplay = petsToDisplay => ({
+  type: 'PETS',
+  petsToDisplay
+})
