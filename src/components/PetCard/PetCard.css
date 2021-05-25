@@ -12,6 +12,11 @@
   border: solid 2px #6504B5;
 }
 
+.card-image {
+  width: auto;
+  height: 10em;
+}
+
 
 .card:hover {
   border: 2px solid red;
