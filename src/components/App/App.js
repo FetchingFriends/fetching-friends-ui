@@ -12,6 +12,7 @@ import PetCard from "../PetCard/PetCard.js"
 import PetInfo from "../PetInfo/PetInfo.js"
 import { connect } from 'react-redux';
 import { getAnimals } from '../../apiCalls'
+import Applications from '../Applications/Applications'
 
 class App extends Component {
   constructor() {
@@ -65,6 +66,13 @@ class App extends Component {
           <Route exact path='/all-pets/cats' render={() =>
             <PetDisplay type={ "cats" } petsToDisplay={this.state.petsToDisplay}/>
           }/>
+          <Route exact path='/applications' render={() => {
+            return (
+              <>
+                <Applications />
+              </>
+            )
+          }} />
           <Route exact path='/all-pets/other' render={() =>
             <PetDisplay type={ "other" } petsToDisplay={this.state.petsToDisplay}/>
           }/>

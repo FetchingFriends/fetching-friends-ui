@@ -9,7 +9,6 @@ export const fetchUser = async (email) => {
 }
 
 export const userSignUp = (state) => {
-  console.log(state)
   return fetch('https://fetching-friends-backend.herokuapp.com/api/v1/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -21,4 +20,14 @@ export const userSignUp = (state) => {
 export const getAnimals = (type) => {
   return fetch(`https://fetching-friends-backend.herokuapp.com/api/v1/pets?type=${type}`)
   .then(res => res.json())
+}
+
+export const updatePetStatus = (id, status) => {
+  console.log(status)
+  return fetch(`https://fetching-friends-backend.herokuapp.com/api/v1/pet_applications/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json'},
+    body: JSON.stringify(status)
+  })
+  .then(response => response.json())
 }

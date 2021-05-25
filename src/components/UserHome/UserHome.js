@@ -20,6 +20,7 @@ const UserHome = (props) => {
         <div className='user-pets'>
           <section className='my-pets'>
             <h2>My Friends</h2>
+              {!selectedUser.data.attributes.pets.length && <h4>You have not submitted any friends!</h4>}
               {selectedUser.data && <div className="pet-display">{selectedUser.data.attributes.pets.map(pet => {
                 return(
                   <PetCard pet={pet} />
@@ -28,10 +29,11 @@ const UserHome = (props) => {
           </section>
           <section className='favorite-pets'>
             <h2>Favorited Friends</h2>
-              {/* {selectedUser.data && <div className="pet-display">{selectedUser.data.attributes.favorites.map(pet => {
-                return(
-                  <PetCard pet={pet} />
-                )
+               {/* {!selectedUser.data.attributes.favorites.length && <h4>You have not favorited any friends yet!</h4>}
+                {selectedUser.data && <div className="pet-display">{selectedUser.data.attributes.favorites.map(pet => {
+                 return(
+                   <PetCard pet={pet} />
+                 )
               })}</div>} */}
           </section>
         </div>
@@ -50,6 +52,12 @@ const UserHome = (props) => {
               <button className='other button'>Other</button>
             </Link>
             </div>
+          </div>
+          <div>
+            <h2>Pending Applications</h2>
+            <Link to='/applications'>
+              <button className='button'>Applications</button>
+            </Link>
           </div>
           <div>
             <h2>Post Friend for Adoption</h2>
