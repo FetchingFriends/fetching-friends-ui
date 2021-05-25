@@ -17,3 +17,8 @@ export const userSignUp = (state) => {
   })
   .then(response => response.json())
 }
+
+export const getAnimals = (type) => {
+  return fetch(`https://fetching-friends-backend.herokuapp.com/api/v1/pets?type=${type}`)
+  .then(res => res.json())
+}
