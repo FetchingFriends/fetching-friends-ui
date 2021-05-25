@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css';
 import Header from '../Header/Header'
 import Login from '../Login/Login'
+import PostAFriend from '../PostAFriend/PostAFriend';
 import { Route, Switch } from 'react-router-dom'
 import SignUp from '../SignUp/SignUp'
 import UserHome from '../UserHome/UserHome'
@@ -9,13 +10,26 @@ import petData from "../../dummyPetData.js"
 import PetDisplay from "../PetDisplay/PetDisplay.js"
 import PetCard from "../PetCard/PetCard.js"
 import PetInfo from "../PetInfo/PetInfo.js"
+import { connect } from 'react-redux';
+import { getAnimals } from '../../apiCalls'
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      petsToDisplay: petData
+      dogs: [],
+      cats: [],
+      other: []
     }
+  }
+
+  componentDidMount() {
+    getAnimals('dogs')
+    .then(data => this.setState({dogs: data.data}))
+    getAnimals('cats')
+    .then(data => this.setState({cats: data.data}))
+    getAnimals('other')
+    .then(data => this.setState({other: data.data}))
   }
 
   render() {
@@ -26,8 +40,8 @@ class App extends Component {
           <Route exact path='/' render={() => {
             return (
               <>
-                <Login />
-                <img className='background-image' src='https://www.whitewatervethospital.com/storage/app/media/puppies-and-kittens.jpg' alt='puppies and kittens'/>
+                <Login setLoginValue={this.setLoginValue}/>
+                <img className='background-image' src='https://www.whitewatervethospital.com/storage/app/media/puppies-and-kittens.jpg'/>
               </>
             )
           }} />
@@ -38,7 +52,7 @@ class App extends Component {
               </>
             )
           }} />
-          <Route exact path='/user-home' render={() => {
+          <Route exact path='/homepage' render={() => {
             return (
               <>
                 <UserHome />
@@ -54,8 +68,8 @@ class App extends Component {
           <Route exact path='/all-pets/other' render={() =>
             <PetDisplay type={ "other" } petsToDisplay={this.state.petsToDisplay}/>
           }/>
-          <Route exact path='/pet/:id' render={({match}) =>
-          <PetInfo id={ match.params.id } pets={ this.state.petsToDisplay }/>
+          <Route exact path='/pet/:type/:id' render={({match}) =>
+            <PetInfo id={ match.params.id } type ={match.params.type} pets={ this.state }/>
         }/>
         </Switch>
       </div>
@@ -63,5 +77,9 @@ class App extends Component {
   }
 }
 
+export const mapStateToProps = ({petsToDisplay}) => ({
+  petsToDisplay
+}
+)
 
-export default App;
+export default App
