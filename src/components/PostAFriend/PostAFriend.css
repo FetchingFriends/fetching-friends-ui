@@ -28,7 +28,7 @@ main {
     height: 30px;
     width: 35px;
     border-radius: 50%;
-    margin-top: 20px;
+    margin: 20px;
     border: none;
     color: white;
     font-size: 20px;
@@ -39,10 +39,20 @@ main {
     height: 30px;
     width: 100px;
     border-radius: 50%;
-    margin-top: 20px;
+    margin: 20px;
     border: none;
     color: white;
     font-size: 20px;
+    cursor: pointer;
+  }
+
+  .back-button:hover {
+    color: #6504B5;
+    background-color: white;
+    height: 30px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 5px;
     cursor: pointer;
   }
 
