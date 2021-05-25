@@ -13,6 +13,7 @@ import PetInfo from "../PetInfo/PetInfo.js"
 import { connect } from 'react-redux';
 import { getAnimals } from '../../apiCalls'
 import Applications from '../Applications/Applications'
+import ApplicationForm from '../ApplicationForm/ApplicationForm'
 
 class App extends Component {
   constructor() {
@@ -78,7 +79,10 @@ class App extends Component {
           }/>
           <Route exact path='/pet/:type/:id' render={({match}) =>
             <PetInfo id={ match.params.id } type ={match.params.type} pets={ this.state }/>
-        }/>
+          }/>
+          <Route exact path='/application/:id' render={({match}) =>
+            <ApplicationForm id={ match.params.id } />
+          }/>
         </Switch>
       </div>
     )
