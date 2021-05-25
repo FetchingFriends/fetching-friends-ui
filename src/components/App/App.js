@@ -11,6 +11,7 @@ import PetDisplay from "../PetDisplay/PetDisplay.js"
 import PetCard from "../PetCard/PetCard.js"
 import PetInfo from "../PetInfo/PetInfo.js"
 import { connect } from 'react-redux';
+import Applications from '../Applications/Applications'
 
 class App extends Component {
   constructor() {
@@ -44,6 +45,13 @@ class App extends Component {
             return (
               <>
                 <UserHome />
+              </>
+            )
+          }} />
+          <Route exact path='/applications' render={() => {
+            return (
+              <>
+                <Applications />
               </>
             )
           }} />
