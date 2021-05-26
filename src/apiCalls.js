@@ -8,13 +8,30 @@ export const fetchUser = async (email) => {
   return user
 }
 
-export const userSignUp = (state) => {
-  return fetch('https://fetching-friends-backend.herokuapp.com/api/v1/users', {
+export const userSignUp = async (state) => {
+  const url = 'https://fetching-friends-backend.herokuapp.com/api/v1/users'
+  const options = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(state)
-  })
-  .then(response => response.json())
+  }
+  const response = await fetch(url, options)
+  if (!response.ok) {
+    throw new Error('That email may already be taken or not valid please try again')
+  }
+  const userSignedUp = await response.json()
+  return userSignedUp
+  // return fetch('https://fetching-friends-backend.herokuapp.com/api/v1/users', {
+  //   method: 'POST',
+  //   headers: { 'Content-Type': 'application/json' },
+  //   body: JSON.stringify(state)
+  // })
+  // .then(response => {
+  //   if(!response.ok) {
+  //     throw new Error('That email may already be taken or not valid please try again')
+  //   }
+  //   return response.json()
+  // })
 }
 
 export const getAnimals = (type) => {
