@@ -12,6 +12,10 @@ class ApplicationForm extends Component {
       message: '',
       userId: props.selectedUser.selectedUser.data.id,
       petId: props.id,
+<<<<<<< HEAD
+=======
+      petName: props.name,
+>>>>>>> main
       successfulSubmit: false 
     }
   }
@@ -32,8 +36,14 @@ class ApplicationForm extends Component {
     return (
       <>
       {!this.state.successfulSubmit && 
+<<<<<<< HEAD
       <form>
         <input
+=======
+      <form className="application-form">
+        <input
+          className="application-input"
+>>>>>>> main
           required
           type='text'
           placeholder='Why would you be a good fit for this pet?'
@@ -41,6 +51,7 @@ class ApplicationForm extends Component {
           value={this.state.message}
           onChange={e => this.handleChange(e)}
         />
+<<<<<<< HEAD
         <button onClick={(e) => this.postForm(e)} type="submit">Submit</button>
       </form>
       }
@@ -51,6 +62,18 @@ class ApplicationForm extends Component {
           <button className="button">Home</button>
         </Link>
       </>
+=======
+        <button onClick={(e) => this.postForm(e)} type="submit" className="submit-button">Submit</button>
+      </form>
+      }
+      {this.state.successfulSubmit && 
+      <div className="successful-submit">
+        <h1>Success!</h1>
+        <Link to={`/homepage`}>
+          <button className="submit-button">Home</button>
+        </Link>
+      </div>
+>>>>>>> main
       }
       </>
     )

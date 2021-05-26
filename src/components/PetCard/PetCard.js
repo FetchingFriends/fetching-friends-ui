@@ -38,4 +38,3 @@ export const mapStateToProps = ({ selectedUser }) => ({
   selectedUser
 })
 export default connect(mapStateToProps)(PetCard);
-

@@ -83,8 +83,13 @@ class App extends Component {
           <Route exact path='/post-a-friend' render={({ match }) =>
             <PostAFriend />
           } />
+<<<<<<< HEAD
           <Route exact path='/application/:id' render={({match}) =>
             <ApplicationForm id={ match.params.id } />
+=======
+          <Route exact path='/application/:id/:name' render={({match}) =>
+            <ApplicationForm id={ match.params.id } name={ match.params.name } />
+>>>>>>> main
           }/>
         </Switch>
       </div>

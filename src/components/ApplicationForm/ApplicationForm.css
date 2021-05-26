@@ -1,0 +1,42 @@
+.application-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  align-items: center;
+  margin-top: 10em;
+}
+
+.application-input {
+  text-align: center;
+  width: 40em;
+  height: 15em;
+  border-radius: 31px;
+  font-size: 18px;
+  color: #8f8fa1;
+  /* margin-bottom: 7em; */
+}
+
+.submit-button {
+  margin-top: 7em;
+  color: white;
+  background-color: #6504B5;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 10em;
+  height: 5em;
+}
+
+.submit-button:hover {
+  background-color: white;
+  border-color: #6504B5;
+  color: #6504B5;
+  cursor: pointer;
+}
+
+.successful-submit {
+  display: flex;
+  flex-direction: column;
+  margin: 7em;
+}
