@@ -80,7 +80,6 @@ console.log(selectedUser)
   }
 
   function nextQuestion(inputQuestion, event) {
-    console.log(newPet)
     if (renderQuestionById <= 6 && inputValue !== '') {
       event.preventDefault()
       const updatePet = { ...newPet }
@@ -99,8 +98,7 @@ console.log(selectedUser)
         {renderQuestionById <= 6 && <button className='submit-question' type='submit' onClick={(e) => nextQuestion(questions[renderQuestionById].id, e)}>➤</button>}
         {renderQuestionById === 7 && <button className='completed-question' type='submit' onClick={(e) => {
           e.preventDefault()
-          console.log(newPet)
-          // postANewPet(newPet)
+          postANewPet(newPet)
         }}>Complete</button>}
       </form>
       <Link to={'/homepage'}>
