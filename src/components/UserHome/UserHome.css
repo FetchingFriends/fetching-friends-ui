@@ -13,3 +13,10 @@
   width: 50%;
   border-bottom: solid #6504B5 4px
 }
+
+.user-home-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
