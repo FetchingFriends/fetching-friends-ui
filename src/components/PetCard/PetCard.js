@@ -15,7 +15,7 @@ const PetCard = (props) => {
   }
 
   return (
-    <Link to={`/pet/${props.pet.id}`} style={{ textDecoration: 'none' }}>
+    <Link to={`/pet/${props.pet.attributes.pet_type}/${props.pet.id}`} style={{ textDecoration: 'none' }}>
       <div className='card' key={props.pet.id}>
         <img src={props.favoritedImg ? props.favoritedImg : favoriteClear} className='favorite-button' id={props.pet.id} onClick={(e) => {
           e.preventDefault()

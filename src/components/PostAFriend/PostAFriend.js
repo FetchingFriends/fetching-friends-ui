@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import { postANewPet } from '../../postAPetAPI.js'
+import { connect } from 'react-redux';
 import './PostAFriend.css'
 
-function PostAFriend() {
-
+function PostAFriend({ selectedUser }) {
   //state
   const [renderQuestionById, setrenderQuestionById] = useState(0);
-  const questions = [{ question: 'What\'s your Friend\'s name?', id: 'name', inputType: 'text' }, { question: 'How old are they?', id: 'age', inputType: 'number' }, { question: 'What breed?', id: 'breed', inputType: 'text' }, { question: 'If you could describe them in a short paragraph?', id: 'description', inputType: 'text' }, { question: 'Gender?', id: 'gender', inputType: 'radio', options: ['M', 'F'] }, { question: 'Neutered?', id: 'fixed', inputType: 'radio', options: [true, false] }, { question: 'House trained?', id: 'houseTrained', inputType: 'radio', options: [true, false] }, { question: 'Upload a photo so we can find your friend a new home!', id: 'photo_url_1', inputType: 'file' }, { question: 'Good with kids?', id: 'goodWithKids', inputType: 'radio', options: [true, false] }, { question: 'Good other pets?', id: 'goodWithPets', inputType: 'radio', options: [true, false] }]
-  const [newPet, setnewPet] = useState({})
+  const questions = [{ question: 'What kind of friend do you have?', id: 'pet_type', inputType: 'radio', options: [1, 2, 3] }, { question: 'What\'s your Friend\'s name?', id: 'name', inputType: 'text' }, { question: 'How old are they?', id: 'age', inputType: 'number' }, { question: 'What breed?', id: 'breed', inputType: 'text' }, { question: 'If you could describe them in a short paragraph?', id: 'description', inputType: 'text' }, { question: 'Gender?', id: 'gender', inputType: 'radio', options: ['M', 'F'] }, { question: 'Upload a photo so we can find your friend a new home!', id: 'photo_url_1', inputType: 'file' }]
+  const [newPet, setnewPet] = useState({ user_id: parseInt(selectedUser.data.id) })
   const [inputValue, setInputValue] = useState('')
+  const [submitted, setSubmitted] = useState(false)
 
   //functions
 
@@ -18,13 +19,19 @@ function PostAFriend() {
       return 'Yes'
     } else if (option === false) {
       return 'No'
+    } else if (option === 1) {
+      return 'Dog'
+    } else if (option === 2) {
+      return 'Cat'
+    } else if (option === 3) {
+      return 'Other'
     } else {
       return option
     }
   }
 
   function renderQuestion() {
-    if (renderQuestionById <= 9) {
+    if (renderQuestionById <= 6) {
       return (
         <>
           <p>{questions[renderQuestionById].question}</p>
@@ -45,7 +52,6 @@ function PostAFriend() {
             <p>Age: {newPet.age}</p>
             <p>Breed: {newPet.breed}</p>
             <p>Gender: {newPet.gender}</p>
-            {console.log(newPet)}
           </div>
         </>
       )
@@ -58,13 +64,13 @@ function PostAFriend() {
     } else if (inputType === 'file') {
       return (<input accept="image/gif, image/jpeg, image/png" name="image" id="file" className={inputType} type={inputType} required onChange={(e) => setInputValue(URL.createObjectURL(e.target.files[0]))}></input>)
     } else if (inputType === 'number') {
-      return (<input className={inputType} type={inputType} value={inputValue} required onChange={(e) => setInputValue(e.target.value)}></input>)
+      return (<input className={inputType} type={inputType} value={inputValue} required onChange={(e) => setInputValue(parseInt(e.target.value))}></input>)
     } else if (inputType === 'radio') {
       const returnOptions = questions[renderQuestionById].options.map(option => {
         return (
           <div className={inputType} key={option + renderQuestionById}>
             <label key={`${option} label`}>{handleTrueFalseLabel(option)}</label>
-            <input className={inputType} name={questions[renderQuestionById].id} type={inputType} value={option} key={option} required onClick={(e) => { setInputValue(e.target.value) }} />
+            <input className={inputType} name={questions[renderQuestionById].id} type={inputType} value={option} key={option} required onClick={(e) => { setInputValue(parseInt(e.target.value) ? parseInt(e.target.value) : e.target.value) }} />
           </div>
         )
       })
@@ -73,8 +79,7 @@ function PostAFriend() {
   }
 
   function nextQuestion(inputQuestion, event) {
-    console.log(renderQuestionById)
-    if (renderQuestionById <= 9 && inputValue !== '') {
+    if (renderQuestionById <= 6 && inputValue !== '') {
       event.preventDefault()
       const updatePet = { ...newPet }
       updatePet[inputQuestion] = inputValue
@@ -89,12 +94,14 @@ function PostAFriend() {
       <h1>Find your Friend a new Home</h1>
       <form className='question fade'>
         {renderQuestion()}
-        {renderQuestionById <= 9 && <button className='submit-question' type='submit' onClick={(e) => nextQuestion(questions[renderQuestionById].id, e)}>➤</button>}
-        {renderQuestionById === 10 && <button className='completed-question' type='submit' onClick={(e) => {
+        {renderQuestionById <= 6 && <button className='submit-question' type='submit' onClick={(e) => nextQuestion(questions[renderQuestionById].id, e)}>➤</button>}
+        {renderQuestionById === 7 && !submitted && 
+        <button className='completed-question' type='submit' onClick={(e) => {
           e.preventDefault()
-          console.log('submitted')
           postANewPet(newPet)
+          setSubmitted(true)
         }}>Complete</button>}
+        {submitted && <h3>Your Friend has been posted successfully! Go back to home to view their listing.</h3>}
       </form>
       <Link to={'/homepage'}>
         <button className='back-button'>Back To Home</button>
@@ -103,4 +110,8 @@ function PostAFriend() {
   );
 }
 
-export default PostAFriend;
+const mapStateToProps = ({ selectedUser }) => ({
+  selectedUser
+})
+
+export default connect(mapStateToProps)(PostAFriend)
