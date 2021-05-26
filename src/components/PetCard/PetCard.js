@@ -20,12 +20,9 @@ const PetCard = (props) => {
         <img src={props.favoritedImg ? props.favoritedImg : favoriteClear} className='favorite-button' id={props.pet.id} onClick={(e) => {
           e.preventDefault()
           if (!props.selectedUser.data.attributes.favorites.includes(props.pet)) {
-            console.log(props.pet)
             props.selectedUser.data.attributes.favorites.push(props.pet)
-            console.log(props.selectedUser.data.attributes.favorites)
           } else if (props.selectedUser.data.attributes.favorites.includes(props.pet)) {
             removeFavorite(e)
-            console.log(props.selectedUser.data.attributes.favorites)
           }
         }}></img>
         <img src={props.pet.attributes.photo_url_1} alt="Pet" className="card-image" />
