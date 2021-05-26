@@ -29,40 +29,40 @@ const UserHome = (props) => {
           </section>
           <section className='favorite-pets'>
             <h2>Favorited Friends</h2>
-              {!selectedUser.data.attributes.favorites.length && <h4>You have not favorited any friends yet!</h4>}
+               {/* {!selectedUser.data.attributes.favorites.length && <h4>You have not favorited any friends yet!</h4>}
                 {selectedUser.data && <div className="pet-display">{selectedUser.data.attributes.favorites.map(pet => {
                  return(
                    <PetCard pet={pet} />
                  )
-              })}</div>}
+              })}</div>} */}
           </section>
         </div>
         <section className='find-post-pet'>
-          <div>
+          <div className='user-home-link'>
             <h2>Find New Friend</h2>
             <h3>What are you looking for?</h3>
             <div className='search-buttons'>
             <Link to={`/all-pets/dogs`} style={{textDecoration:'none'}}>
-              <button className='search button'>Dog</button>
+              <button className='dog button'>Dog</button> 
             </Link>
             <Link to={`/all-pets/cats`} style={{textDecoration:'none'}}>
-              <button className='search button'>Cat</button>
+              <button className='cat button'>Cat</button>
             </Link>
-            <Link to={`/all-pets/others`} style={{textDecoration:'none'}}>
+            <Link to={`/all-pets/other`} style={{textDecoration:'none'}}>
               <button className='other button'>Other</button>
             </Link>
             </div>
           </div>
-          <div>
+          <div className='user-home-link'>
             <h2>Pending Applications</h2>
             <Link to='/applications'>
               <button className='button'>Applications</button>
             </Link>
           </div>
-          <div>
+          <div className='user-home-link'>
             <h2>Post Friend for Adoption</h2>
-            <Link to='post-a-friend'>
-              <button className='post button'>Post Friend</button>
+            <Link to='/post-a-friend'>
+            <button className='post button'>Post Friend</button>
             </Link>
           </div>
         </section>
