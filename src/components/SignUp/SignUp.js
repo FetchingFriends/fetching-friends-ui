@@ -1,19 +1,33 @@
 import React, { Component } from 'react'
 import './SignUp.css'
 import { Link } from 'react-router-dom'
-
+import { userSignUp } from '../../../src/apiCalls'
 
 class SignUp extends Component {
   constructor() {
     super()
     this.state = {
       username: '',
-      email: ''
+      email: '',
+      error: '',
+      submitted: false
     }
   }
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value })
+  }
+
+  handleSubmit = async (event) => {
+    event.preventDefault()
+    try{
+      await userSignUp(this.state)
+      this.setState({ error: '' })
+      this.setState({ submitted: true })
+    } catch(error) {
+      console.log(error.message)
+      this.setState({ error: error.message })
+    }
   }
 
   render () {
@@ -39,7 +53,9 @@ class SignUp extends Component {
             onChange={this.handleChange}
           />
 
-          <button className='signup button'>Submit</button>
+          <button className='signup button' onClick={this.handleSubmit}>Submit</button>
+          {this.state.error && <h2>{this.state.error}</h2>}
+          {this.state.submitted && !this.state.error && <h2>You have successfully signed up! Head back to the login page to get started!</h2>}
         </form>
       </>
     )
