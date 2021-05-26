@@ -3,6 +3,8 @@ import './UserHome.css'
 import { connect } from 'react-redux';
 import PetCard from '../PetCard/PetCard.js'
 import { Link } from 'react-router-dom'
+import favoriteFilled from '../../img/favorite-filled.png'
+
 
 const UserHome = (props) => {
   const { isLoading, selectedUser, errorMsg } = props
@@ -33,7 +35,7 @@ const UserHome = (props) => {
               {!selectedUser.data.attributes.favorites.length && <h4>You have not favorited any friends yet!</h4>}
                 {selectedUser.data && <div className="pet-display">{selectedUser.data.attributes.favorites.map(pet => {
                  return(
-                   <PetCard pet={pet} />
+                   <PetCard pet={pet} favoritedImg={favoriteFilled} />
                  )
               })}</div>}
           </section>

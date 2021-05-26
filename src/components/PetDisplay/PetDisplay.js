@@ -6,8 +6,6 @@ import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import { getPetsToDisplay } from '../../actions'
 
-
-
 class PetDisplay extends Component {
   constructor({type, filterPets, props}) {
     super();

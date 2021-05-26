@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import "./PetInfo.css"
 import { connect } from 'react-redux'
 
-
 const PetInfo = ( {id, pets, type}, props) => {
 
   let allPets = []
@@ -47,6 +46,7 @@ const PetInfo = ( {id, pets, type}, props) => {
 
   )
 }
+
 
 export const mapStateToProps = ({selectedUser }) => ({
   selectedUser

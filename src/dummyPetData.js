@@ -1,8 +1,7 @@
 let petData = [
   {
-        "id": "1",
+        "id": "1",       
           "type": "dog",
-          "attributes": {
             "user_id": 5,
             "name": "Max",
             "age": 1,
@@ -16,12 +15,10 @@ let petData = [
             "photo_url_3": "URL Path",
             "good with kids": true,
             "good with other pets": true
-          }
       },
       {
         "id": "2",
           "type": "dog",
-          "attributes": {
             "user_id": 5,
             "name": "Jeremy",
             "age": 7,
@@ -35,12 +32,10 @@ let petData = [
             "photo_url_3": "URL Path",
             "good with kids": false,
             "good with other pets": false
-          }
       },
       {
         "id": "3",
           "type": "dog",
-          "attributes": {
             "user_id": 5,
             "name": "Ally",
             "age": 2,
@@ -54,11 +49,9 @@ let petData = [
             "photo_url_3": "URL Path",
             "good with kids": true,
             "good with other pets": true
-          }
       }, {
         "id": "43",
           "type": "dog",
-          "attributes": {
             "user_id": 5,
             "name": "Max",
             "age": 1,
@@ -72,12 +65,10 @@ let petData = [
             "photo_url_3": "URL Path",
             "good with kids": true,
             "good with other pets": true
-          }
       },
       {
         "id": "23",
           "type": "dog",
-          "attributes": {
             "user_id": 5,
             "name": "Jeremy",
             "age": 7,
@@ -91,12 +82,10 @@ let petData = [
             "photo_url_3": "URL Path",
             "good with kids": false,
             "good with other pets": false
-          }
       },
       {
         "id": "12",
           "type": "dog",
-          "attributes": {
             "user_id": 5,
             "name": "Ally",
             "age": 2,
@@ -110,11 +99,9 @@ let petData = [
             "photo_url_3": "URL Path",
             "good with kids": true,
             "good with other pets": true
-          }
       }, {
         "id": "1",
           "type": "dog",
-          "attributes": {
             "user_id": 5,
             "name": "Max",
             "age": 1,
@@ -128,12 +115,10 @@ let petData = [
             "photo_url_3": "URL Path",
             "good with kids": true,
             "good with other pets": true
-          }
       },
       {
         "id": "28",
           "type": "dog",
-          "attributes": {
             "user_id": 5,
             "name": "Jeremy",
             "age": 7,
@@ -147,12 +132,10 @@ let petData = [
             "photo_url_3": "URL Path",
             "good with kids": false,
             "good with other pets": false
-          }
       },
       {
         "id": "98",
           "type": "dog",
-          "attributes": {
             "user_id": 5,
             "name": "Ally",
             "age": 2,
@@ -166,7 +149,6 @@ let petData = [
             "photo_url_3": "URL Path",
             "good with kids": true,
             "good with other pets": true
-          }
       }
 ]
 
