@@ -52,6 +52,9 @@ const Applications = (props) => {
             })}</div>}
         </section>
       </div>
+      <Link to={`/homepage`}>
+        <button className="submit-button home-button">Home</button>
+      </Link>
     </>
   )
 }
