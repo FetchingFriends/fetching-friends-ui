@@ -21,12 +21,12 @@ const Applications = (props) => {
 
   return (
     <>
-      {props.selectedUser.data && <h2>{props.selectedUser.data.attributes.username}'s Pending Applications!</h2>}
+      {props.selectedUser.data && <h2 className='username'>{props.selectedUser.data.attributes.username}'s Pending Applications!</h2>}
       <div className='user-pets'>
         <section className='my-pets'>
           <h2>My Applications Pending For Other Pets</h2>
             {!props.selectedUser.data.attributes.applications.length && <h4>No Pending Applications!</h4>}
-            {props.selectedUser.data && <div className="pet-display">{props.selectedUser.data.attributes.applications.map(pet => {
+            {props.selectedUser.data && <div className="user-app pet-display">{props.selectedUser.data.attributes.applications.map(pet => {
               return(
                 <div className='application-card'>
                   <p>Name: {pet.pet_name}</p>
@@ -39,7 +39,7 @@ const Applications = (props) => {
         <section className='favorite-pets'>
           <h2>Applications Pending With My Pets</h2>
             {!props.selectedUser.data.attributes.favorites.length && <h4>You have not favorited any friends yet!</h4>}
-            {props.selectedUser.data && <div className="pet-display">{props.selectedUser.data.attributes.pet_applications.map(pet => {
+            {props.selectedUser.data && <div className="user-pets pet-display">{props.selectedUser.data.attributes.pet_applications.map(pet => {
               return(
                 <div className='application-card'>
                   <p>Name: {pet.pet_name}</p>
