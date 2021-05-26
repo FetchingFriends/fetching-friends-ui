@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 
 const PetInfo = ( {id, pets, type}, props) => {
-  
+
   let allPets = []
 
   pets.dogs.forEach(dog => allPets.push(dog))
@@ -36,17 +36,19 @@ const PetInfo = ( {id, pets, type}, props) => {
         <p>House Trained: {returnBoolean(matchedPet[0].attributes.house_trained)}</p>}
         {matchedPet[0].attributes.good_with_kids &&
         <p>Good With Kids: {returnBoolean(matchedPet[0].attributes.good_with_kids)}</p>}
-        {matchedPet[0].attributes.good_with_animals 
+        {matchedPet[0].attributes.good_with_animals
         &&<p>Good With Animals: {returnBoolean(matchedPet[0].attributes.good_with_animals)}</p>}
-        <Link to={`/homepage`}>
-          <button className="button">Home</button>
-        </Link>
-        <Link to={`/all-pets/${matchedPet[0].attributes.pet_type}s`}>
-          <button className="button">All {matchedPet[0].attributes.pet_type}s</button>
-        </Link>
+        <div className='info-buttons'>
+          <Link to={`/homepage`}>
+            <button className="home button">Home</button>
+          </Link>
+          <Link to={`/all-pets/${matchedPet[0].attributes.pet_type}s`}>
+            <button className="button">All {matchedPet[0].attributes.pet_type}s</button>
+          </Link>
+        </div>
       </div>
     </div>
-    
+
   )
 }
 

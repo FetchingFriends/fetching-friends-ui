@@ -29,12 +29,12 @@ const UserHome = (props) => {
           </section>
           <section className='favorite-pets'>
             <h2>Favorited Friends</h2>
-               {/* {!selectedUser.data.attributes.favorites.length && <h4>You have not favorited any friends yet!</h4>}
+              {!selectedUser.data.attributes.favorites.length && <h4>You have not favorited any friends yet!</h4>}
                 {selectedUser.data && <div className="pet-display">{selectedUser.data.attributes.favorites.map(pet => {
                  return(
                    <PetCard pet={pet} />
                  )
-              })}</div>} */}
+              })}</div>}
           </section>
         </div>
         <section className='find-post-pet'>
@@ -43,13 +43,13 @@ const UserHome = (props) => {
             <h3>What are you looking for?</h3>
             <div className='search-buttons'>
             <Link to={`/all-pets/dogs`} style={{textDecoration:'none'}}>
-              <button className='dog button'>Dog</button> 
+              <button className='search button'>Dog</button>
             </Link>
             <Link to={`/all-pets/cats`} style={{textDecoration:'none'}}>
-              <button className='cat button'>Cat</button>
+              <button className='search button'>Cat</button>
             </Link>
             <Link to={`/all-pets/other`} style={{textDecoration:'none'}}>
-              <button className='other button'>Other</button>
+              <button className='search button'>Other</button>
             </Link>
             </div>
           </div>

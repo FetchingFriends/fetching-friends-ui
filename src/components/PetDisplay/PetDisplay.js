@@ -22,7 +22,7 @@ class PetDisplay extends Component {
     .then(res => res.json())
     .then(response => this.setState({allPets: response.data, petsToDisplay: response.data}))
   }
-  
+
     filterPets = (input, e) => {
     e.preventDefault()
    let filteredPets = this.state.allPets.filter(pet => {
@@ -43,7 +43,7 @@ class PetDisplay extends Component {
      }
      if(input.animals !== '' && ((input.animals === "true" && pet.attributes.good_with_animals === false) || (input.animals === "false" && pet.attributes.good_with_animals === true)) ) {
        return false;
-     } 
+     }
      return true;
    })
    this.setState({petsToDisplay: filteredPets})
@@ -62,10 +62,9 @@ class PetDisplay extends Component {
         <Link to={`/homepage`} style={{textDecoration:'none'}}>
           <button className="button">Back</button>
         </Link>
-        
+
       </>
     )
   }
 }
   export default PetDisplay;
-  

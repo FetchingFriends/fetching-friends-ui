@@ -1,9 +1,9 @@
 .pet-display {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  column-gap: 5vw;
-  row-gap: 1vh;
-  padding: 2%;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 10px
 }
 
 .button {

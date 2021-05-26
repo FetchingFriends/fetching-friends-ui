@@ -8,7 +8,9 @@ class SignUp extends Component {
     super()
     this.state = {
       username: '',
-      email: ''
+      email: '',
+      error: '',
+      submitted: false
     }
   }
 
@@ -16,9 +18,16 @@ class SignUp extends Component {
     this.setState({ [event.target.name]: event.target.value })
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault()
-    userSignUp(this.state)
+    try{
+      await userSignUp(this.state)
+      this.setState({ error: '' })
+      this.setState({ submitted: true })
+    } catch(error) {
+      console.log(error.message)
+      this.setState({ error: error.message })
+    }
   }
 
   render () {
@@ -45,6 +54,8 @@ class SignUp extends Component {
           />
 
           <button className='signup button' onClick={this.handleSubmit}>Submit</button>
+          {this.state.error && <h2>{this.state.error}</h2>}
+          {this.state.submitted && !this.state.error && <h2>You have successfully signed up! Head back to the login page to get started!</h2>}
         </form>
       </>
     )
