@@ -13,7 +13,7 @@ main {
   }
 
   .question {
-    margin-top: 200px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,10 +28,32 @@ main {
     height: 30px;
     width: 35px;
     border-radius: 50%;
-    margin-top: 20px;
+    margin: 20px;
     border: none;
     color: white;
     font-size: 20px;
+    cursor: pointer;
+  }
+  .completed-question {
+    background-color: #6504B5;
+    height: 30px;
+    width: 100px;
+    border-radius: 50%;
+    margin: 20px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .back-button {
+    color: #6504B5;
+    background-color: white;
+    height: 30px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
   }
 
   .number {
