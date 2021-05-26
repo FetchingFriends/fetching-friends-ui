@@ -6,10 +6,11 @@ import { Link } from 'react-router-dom'
 
 const UserHome = (props) => {
   const { isLoading, selectedUser, errorMsg } = props
+  console.log(selectedUser)
   return (
     <>
       {isLoading && <h2>Loading...</h2> }
-      {!isLoading && errorMsg && <div>
+      {!isLoading && errorMsg && <div className='error'>
           <h2>{errorMsg}</h2>
           <Link to='/'>
             <button className='button'>Login</button>
