@@ -8,8 +8,9 @@ function PostAFriend({ selectedUser }) {
   //state
   const [renderQuestionById, setrenderQuestionById] = useState(0);
   const questions = [{ question: 'What kind of friend do you have?', id: 'pet_type', inputType: 'radio', options: [1, 2, 3] }, { question: 'What\'s your Friend\'s name?', id: 'name', inputType: 'text' }, { question: 'How old are they?', id: 'age', inputType: 'number' }, { question: 'What breed?', id: 'breed', inputType: 'text' }, { question: 'If you could describe them in a short paragraph?', id: 'description', inputType: 'text' }, { question: 'Gender?', id: 'gender', inputType: 'radio', options: ['M', 'F'] }, { question: 'Upload a photo so we can find your friend a new home!', id: 'photo_url_1', inputType: 'file' }]
-  const [newPet, setnewPet] = useState({user_id: parseInt(selectedUser.data.id)})
+  const [newPet, setnewPet] = useState({ user_id: parseInt(selectedUser.data.id) })
   const [inputValue, setInputValue] = useState('')
+  const [submitted, setSubmitted] = useState(false)
 
   //functions
 
@@ -18,11 +19,11 @@ function PostAFriend({ selectedUser }) {
       return 'Yes'
     } else if (option === false) {
       return 'No'
-    }  else if (option === 1) {
+    } else if (option === 1) {
       return 'Dog'
-    }  else if (option === 2) {
+    } else if (option === 2) {
       return 'Cat'
-    }  else if (option === 3) {
+    } else if (option === 3) {
       return 'Other'
     } else {
       return option
@@ -94,10 +95,13 @@ function PostAFriend({ selectedUser }) {
       <form className='question fade'>
         {renderQuestion()}
         {renderQuestionById <= 6 && <button className='submit-question' type='submit' onClick={(e) => nextQuestion(questions[renderQuestionById].id, e)}>➤</button>}
-        {renderQuestionById === 7 && <button className='completed-question' type='submit' onClick={(e) => {
+        {renderQuestionById === 7 && !submitted && 
+        <button className='completed-question' type='submit' onClick={(e) => {
           e.preventDefault()
           postANewPet(newPet)
+          setSubmitted(true)
         }}>Complete</button>}
+        {submitted && <h3>Your Friend has been posted successfully! Go back to home to view their listing.</h3>}
       </form>
       <Link to={'/homepage'}>
         <button className='back-button'>Back To Home</button>
@@ -106,7 +110,7 @@ function PostAFriend({ selectedUser }) {
   );
 }
 
-const mapStateToProps = ({selectedUser}) => ({
+const mapStateToProps = ({ selectedUser }) => ({
   selectedUser
 })
 
