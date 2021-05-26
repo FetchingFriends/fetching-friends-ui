@@ -13,11 +13,17 @@
 
 .card-image {
   width: auto;
-  height: 8em;
+  height: 10em;
 }
 
 
 .card:hover {
   border: 2px solid red;
   transform: scale(1.1);
+}
+
+@media screen and (max-width: 750px) {
+  .card-image {
+    height: 8em;
+  }
 }
