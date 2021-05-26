@@ -38,7 +38,7 @@ const PetInfo = ( {id, pets, type}, props) => {
           <Link to={`/all-pets/${matchedPet[0].attributes.pet_type}s`}>
             <button className="button">All {matchedPet[0].attributes.pet_type}s</button>
           </Link>
-          <Link to={`/application/${matchedPet[0].id}`}>
+          <Link to={`/application/${matchedPet[0].id}/${matchedPet[0].attributes.name}`}>
             <button className="button">I want to adopt!</button>
           </Link>
         </div>
