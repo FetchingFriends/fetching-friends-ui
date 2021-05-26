@@ -48,8 +48,8 @@ const UserHome = (props) => {
             <Link to={`/all-pets/cats`} style={{textDecoration:'none'}}>
               <button className='search button'>Cat</button>
             </Link>
-            <Link to={`/all-pets/other`} style={{textDecoration:'none'}}>
-              <button className='search button'>Other</button>
+            <Link to={`/all-pets/others`} style={{textDecoration:'none'}}>
+              <button className='other button'>Other</button>
             </Link>
             </div>
           </div>
@@ -61,7 +61,9 @@ const UserHome = (props) => {
           </div>
           <div>
             <h2>Post Friend for Adoption</h2>
-            <button className='post button'>Post Friend</button>
+            <Link to='post-a-friend'>
+              <button className='post button'>Post Friend</button>
+            </Link>
           </div>
         </section>
       </section>}

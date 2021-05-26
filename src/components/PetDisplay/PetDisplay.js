@@ -32,7 +32,7 @@ class PetDisplay extends Component {
      if(input.gender !== '' && input.gender !== pet.attributes.gender && ((input.gender === "Male" && pet.attributes.gender === "female") || (input.gender === "Female" && pet.attributes.gender === "male"))) {
        return false;
      }
-     if(input.fixed !== '' && ((input.fixed === "true" && pet.attributes.fix === false) || (input.fixed === "false" && pet.attributes.fix === true)) ) {
+     if(input.fixed !== '' && ((input.fixed === "true" && pet.attributes.fixed === false) || (input.fixed === "false" && pet.attributes.fixed === true)) ) {
        return false;
      }
      if(input.trained !== '' && ((input.trained === "true" && pet.attributes.house_trained === false) || (input.trained === "false" && pet.attributes.house_trained === true)) ) {

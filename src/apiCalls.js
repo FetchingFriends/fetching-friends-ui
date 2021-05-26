@@ -48,3 +48,15 @@ export const updatePetStatus = (id, status) => {
   })
   .then(response => response.json())
 }
+
+export const postApplication = (state) => {
+  return fetch('https://fetching-friends-backend.herokuapp.com/api/v1/application', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      "user_id": state.userId,
+      "pet_id": state.petId,
+      "description": state.message
+    })
+  })
+}
