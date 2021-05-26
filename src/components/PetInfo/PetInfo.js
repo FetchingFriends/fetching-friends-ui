@@ -13,13 +13,6 @@ const PetInfo = ( {id, pets, type}, props) => {
 
   let matchedPet = allPets.filter(pet => pet.id === id && pet.attributes.pet_type === type)
 
-  const returnBoolean = (property) => {
-    if(property === true) {
-      return 'Yes'
-    } else if(property === false) {
-      return "No"
-    }
-  }
 
   return (
     <div className="info-container">
@@ -33,16 +26,19 @@ const PetInfo = ( {id, pets, type}, props) => {
         <p>Breed: {matchedPet[0].attributes.breed}</p>}
         <p>Gender: {matchedPet[0].attributes.gender}</p>
         {matchedPet[0].attributes.house_trained &&
-        <p>House Trained: {returnBoolean(matchedPet[0].attributes.house_trained)}</p>}
+        <p>House Trained</p>}
         {matchedPet[0].attributes.good_with_kids &&
-        <p>Good With Kids: {returnBoolean(matchedPet[0].attributes.good_with_kids)}</p>}
+        <p>Good With Kids</p>}
         {matchedPet[0].attributes.good_with_animals 
-        &&<p>Good With Animals: {returnBoolean(matchedPet[0].attributes.good_with_animals)}</p>}
+        &&<p>Good With Animals</p>}
         <Link to={`/homepage`}>
           <button className="button">Home</button>
         </Link>
         <Link to={`/all-pets/${matchedPet[0].attributes.pet_type}s`}>
           <button className="button">All {matchedPet[0].attributes.pet_type}s</button>
+        </Link>
+        <Link to={`/application/${matchedPet[0].id}`}>
+          <button className="button">I want to adopt!</button>
         </Link>
       </div>
     </div>
