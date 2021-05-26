@@ -13,10 +13,3 @@
   font-weight: bold;
   border-radius: 5px
 }
-
-@media screen and (max-width: 750px) {
-  .pet-display {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-}
