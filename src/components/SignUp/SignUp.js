@@ -55,7 +55,12 @@ class SignUp extends Component {
 
           <button className='signup button' onClick={this.handleSubmit}>Submit</button>
           {this.state.error && <h2>{this.state.error}</h2>}
-          {this.state.submitted && !this.state.error && <h2>You have successfully signed up! Head back to the login page to get started!</h2>}
+          {this.state.submitted && !this.state.error && <div>
+            <h2>You have successfully signed up! Head back to the login page to get started!</h2>
+            <Link to='/'>
+              <button className='button'>Home</button>
+            </Link>
+            </div>}
         </form>
       </>
     )
