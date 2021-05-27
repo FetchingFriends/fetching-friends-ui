@@ -26,3 +26,21 @@ This repo is holds the front-end for Fetching Friends. The back-end repo can be 
 
 <img alt="Cypress" src='https://img.shields.io/badge/cypress%20-%23404d59.svg?&style=for-the-badge&logo=Cypress&logoColor=white'/>
 
+## Installation Instructions
+1. `Clone down this repo and cd into the directory`
+2. `$ npm i`
+3. `$ npm start`
+
+If you see Compiled successfully! in your terminal, the application is running and the app can be viewed at http://localhost:3000/ in your browser.
+
+
+## Features
+
++ [Login Page](#login)
++ [Home View](#home-page)
++ [View all Pets](#all-pets)
++ [Filter Pets](#filter-pets)
++ 
+
+
+![turing-cafe-screenshot](https://user-images.githubusercontent.com/20754511/57332366-dbd59d00-70d7-11e9-9de6-967d7aca98a4.png)
