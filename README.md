@@ -5,7 +5,7 @@ A [Front-End Project](https://mod4.turing.edu/projects/capstone.html) by [Matt M
 
 Fetching Friends is an application designed to help you find your next pet! Future pet parents have the ability to search through the available pets based on certain criteria you are looking for. Once a desired pet is found, you can submit an application straight to the owner to apply for your furry friend. This application also caters towards the needs of someone who has a pet to offer for adoption by giving them a platform to post their animals.
 
-This repo is holds the front-end for Fetching Friends. The front-end repo can be found [here](https://github.com/FetchingFriends/fetching-friends-backend).
+This repo is holds the front-end for Fetching Friends. The back-end repo can be found [here](https://github.com/FetchingFriends/fetching-friends-backend).
 
 [Fetching Friends Back-end Heroku](https://fetching-friends-backend.herokuapp.com/)
 
