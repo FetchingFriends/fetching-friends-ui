@@ -32,28 +32,28 @@ describe('Sign Up', () => {
   it('should have 2 text inputs', () => {
     cy.get('input').first().type('name').should('have.value', 'name').get('input').last().type('email').should('have.value', 'email')
   })
-  it('should display success message with successful sign up', () => {
-    cy.visit('http://localhost:3000/sign-up')
-    cy.intercept({
-      method: 'POST',
-      url: 'https://fetching-friends-backend.herokuapp.com/api/v1/users'
-    },
-    {
-      statusCode: 201,
-      body: {"username":'nametest', "email": "emailtest@mine.com"}
-    })
-    cy.get('input').first().type('nametest').get('input').last().type('emailtest@mine.com').get('button').click().get('h2').last().contains('You have')
-  })
-  it('should display an error message when an error comes back from api', () => {
-    cy.visit('http://localhost:3000/sign-up')
-    cy.intercept({
-      method: 'POST',
-      url: 'https://fetching-friends-backend.herokuapp.com/api/v1/users'
-    },
-    {
-      statusCode: 500,
-      body: {"username":'nametest', "email": "emailtest@mine.com"}
-    })
-    cy.get('button').click().get('h2').last().contains('That email')
-  })
+  // it('should display success message with successful sign up', () => {
+  //   cy.visit('http://localhost:3000/sign-up')
+  //   cy.intercept({
+  //     method: 'POST',
+  //     url: 'https://fetching-friends-backend.herokuapp.com/api/v1/users'
+  //   },
+  //   {
+  //     statusCode: 201,
+  //     body: {"username":'nametest', "email": "emailtest@mine.com"}
+  //   })
+  //   cy.get('input').first().type('nametest').get('input').last().type('emailtest@mine.com').get('button').click().get('h2').last().contains('You have')
+  // })
+  // it('should display an error message when an error comes back from api', () => {
+  //   cy.visit('http://localhost:3000/sign-up')
+  //   cy.intercept({
+  //     method: 'POST',
+  //     url: 'https://fetching-friends-backend.herokuapp.com/api/v1/users'
+  //   },
+  //   {
+  //     statusCode: 500,
+  //     body: {"username":'nametest', "email": "emailtest@mine.com"}
+  //   })
+  //   cy.get('button').click().get('h2').last().contains('That email')
+  // })
 })
