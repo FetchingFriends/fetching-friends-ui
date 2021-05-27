@@ -8,7 +8,7 @@
   align-items: center;
   background-color: #6504B5;
   color: white;
-  transition: transform 1.2s;
+  transition: transform .6;
   margin: 10px;
 
 }
@@ -24,8 +24,8 @@
 }
 
 .card:hover {
-  border: 2px solid red;
-  transform: scale(1.1);
+  /* border: 2px solid red; */
+  transform: scale(1.05);
 }
 
 .favorite-button {
