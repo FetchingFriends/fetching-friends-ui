@@ -7,7 +7,7 @@ import './PostAFriend.css'
 function PostAFriend({ selectedUser }) {
   //state
   const [renderQuestionById, setrenderQuestionById] = useState(0);
-  const questions = [{ question: 'What kind of friend do you have?', id: 'pet_type', inputType: 'radio', options: [1, 2, 3] }, { question: 'What\'s your Friend\'s name?', id: 'name', inputType: 'text' }, { question: 'How old are they?', id: 'age', inputType: 'number' }, { question: 'What breed?', id: 'breed', inputType: 'text' }, { question: 'If you could describe them in a short paragraph?', id: 'description', inputType: 'text' }, { question: 'Gender?', id: 'gender', inputType: 'radio', options: ['M', 'F'] }, { question: 'Upload a photo so we can find your friend a new home!', id: 'photo_url_1', inputType: 'file' }]
+  const questions = [{ question: 'What kind of friend do you have?', id: 'pet_type', inputType: 'radio', options: [1, 2, 3] }, { question: 'What\'s your Friend\'s name?', id: 'name', inputType: 'text' }, { question: 'How old are they?', id: 'age', inputType: 'number' }, { question: 'What breed?', id: 'breed', inputType: 'text' }, { question: 'If you could describe them in a short paragraph?', id: 'description', inputType: 'text' }, { question: 'Gender?', id: 'gender', inputType: 'radio', options: ['M', 'F'] }, { question: 'Upload a photo so we can find your friend a new home!', id: 'photo_url_1', inputType: 'text' }]
   const [newPet, setnewPet] = useState({ user_id: parseInt(selectedUser.data.id) })
   const [inputValue, setInputValue] = useState('')
   const [submitted, setSubmitted] = useState(false)
