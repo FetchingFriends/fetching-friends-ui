@@ -23,7 +23,7 @@ describe('pets', () => {
     cy.get('.posting').first().click().url().should('include','/post-a-friend')
   })
 
-  it.only('should be able to fill out form', () => {
+  it('should be able to fill out form', () => {
     cy.get('.posting').first().click().url().should('include','/post-a-friend')
     cy.get('[type="radio"]').first().check() 
     .get('.submit-question').click()
