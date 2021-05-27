@@ -40,7 +40,12 @@ If you see Compiled successfully! in your terminal, the application is running a
 + [Home View](#home-page)
 + [View all Pets](#all-pets)
 + [Filter Pets](#filter-pets)
-+ 
++ [Individual Pet](#pet-info)
++ [Apply For Pet](#apply)
++ [View Pets you want to adopt or current applications](#applications)
++ [Post a Pet](#post-a-pet)
 
+##Login Page
 
-![turing-cafe-screenshot](https://user-images.githubusercontent.com/20754511/57332366-dbd59d00-70d7-11e9-9de6-967d7aca98a4.png)
+![login](https://user-images.githubusercontent.com/71943275/119885045-8bb01a00-beee-11eb-8973-1514393097e2.png)
+)
