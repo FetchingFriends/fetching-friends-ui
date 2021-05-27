@@ -6,11 +6,8 @@ import PostAFriend from '../PostAFriend/PostAFriend';
 import { Route, Switch } from 'react-router-dom'
 import SignUp from '../SignUp/SignUp'
 import UserHome from '../UserHome/UserHome'
-import petData from "../../dummyPetData.js"
 import PetDisplay from "../PetDisplay/PetDisplay.js"
-import PetCard from "../PetCard/PetCard.js"
 import PetInfo from "../PetInfo/PetInfo.js"
-import { connect } from 'react-redux';
 import { getAnimals } from '../../apiCalls'
 import Applications from '../Applications/Applications'
 import ApplicationForm from '../ApplicationForm/ApplicationForm'
@@ -43,7 +40,7 @@ class App extends Component {
             return (
               <>
                 <Login setLoginValue={this.setLoginValue} />
-                <img className='background-image' src='https://www.whitewatervethospital.com/storage/app/media/puppies-and-kittens.jpg' />
+                <img className='background-image' src='https://www.whitewatervethospital.com/storage/app/media/puppies-and-kittens.jpg' alt='cats and dogs'/>
               </>
             )
           }} />
