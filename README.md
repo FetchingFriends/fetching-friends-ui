@@ -45,7 +45,11 @@ If you see Compiled successfully! in your terminal, the application is running a
 + [View Pets you want to adopt or current applications](#applications)
 + [Post a Pet](#post-a-pet)
 
-##Login Page
+## Login Page
 
 ![login](https://user-images.githubusercontent.com/71943275/119885045-8bb01a00-beee-11eb-8973-1514393097e2.png)
 )
+
+## Home View
+
+![home-page](https://user-images.githubusercontent.com/71943275/119885207-c31ec680-beee-11eb-94c1-4a83ff42bc4c.png)
