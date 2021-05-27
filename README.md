@@ -48,8 +48,36 @@ If you see Compiled successfully! in your terminal, the application is running a
 ## Login Page
 
 ![login](https://user-images.githubusercontent.com/71943275/119885045-8bb01a00-beee-11eb-8973-1514393097e2.png)
-)
 
 ## Home View
 
 ![home-page](https://user-images.githubusercontent.com/71943275/119885207-c31ec680-beee-11eb-94c1-4a83ff42bc4c.png)
+
+## View all Pets
+
+![all-pets](https://user-images.githubusercontent.com/71943275/119885366-fbbea000-beee-11eb-985b-399d83897d50.png)
+
+## Filter Pets
+
+![filter-pets](https://user-images.githubusercontent.com/71943275/119885462-1abd3200-beef-11eb-900c-96d5760b4203.png)
+
+## Individual Pet
+
+![pet-info](https://user-images.githubusercontent.com/71943275/119885534-2f99c580-beef-11eb-93e2-f72002fa0f38.png)
+
+## Apply For a Pet
+
+![apply](https://user-images.githubusercontent.com/71943275/119885649-53f5a200-beef-11eb-9879-1124b7006a34.png)
+
+## View Applications
+
+![View Pets you want to adopt or current applications](https://user-images.githubusercontent.com/71943275/119885803-84d5d700-beef-11eb-905c-2426d494acd1.png)
+
+## Post a Pet
+
+![post-a-pet](https://user-images.githubusercontent.com/71943275/119885895-a040e200-beef-11eb-8017-bb3ead68f5d6.png)
+
+
+
+
+
