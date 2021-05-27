@@ -3,8 +3,6 @@ import PetCard from '../PetCard/PetCard.js'
 import FilterForm from '../FilterForm/FilterForm'
 import { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { bindActionCreators } from 'redux'
-import { getPetsToDisplay } from '../../actions'
 
 class PetDisplay extends Component {
   constructor({type, filterPets, props}) {

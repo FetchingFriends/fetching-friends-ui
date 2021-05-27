@@ -6,7 +6,7 @@ import { updatePetStatus } from '../../../src/apiCalls'
 const Applications = (props) => {
 
   const updateStatus = (event, id) => {
-    const petStatus = event.target.value
+    let petStatus = event.target.value
     if(petStatus === 'Interested') {
       petStatus = 'interested'
     }

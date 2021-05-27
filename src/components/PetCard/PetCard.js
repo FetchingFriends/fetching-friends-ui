@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
 import './PetCard.css'
 import { connect } from 'react-redux'
 import favoriteClear from '../../img/favorite-clear.png'
@@ -8,7 +7,7 @@ const PetCard = (props) => {
 
   const removeFavorite = (e) => {
     for (var i = 0; i < props.selectedUser.data.attributes.favorites.length; i++) {
-      if (e.target.id == props.selectedUser.data.attributes.favorites[i].id) {
+      if (e.target.id === props.selectedUser.data.attributes.favorites[i].id) {
         props.selectedUser.data.attributes.favorites.splice(i, 1);
       }
   }
@@ -24,7 +23,7 @@ const PetCard = (props) => {
           } else if (props.selectedUser.data.attributes.favorites.includes(props.pet)) {
             removeFavorite(e)
           }
-        }}></img>
+        }} alt=''></img>
         <img src={props.pet.attributes.photo_url_1} alt="Pet" className="card-image" />
       </div>
     </Link>
